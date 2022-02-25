@@ -4,5 +4,23 @@
 <dict>
 	<key>Privacy - Photo Library Additions Usage Description</key>
 	<string></string>
+	<key>LSApplicationQueriesSchemes</key>
+  <array>
+      <string>tiktokopensdk</string>
+      <string>tiktoksharesdk</string>
+      <string>snssdk1180</string>
+      <string>snssdk1233</string>
+  </array>
+  <key>TikTokAppID</key>
+  <string>aw920m5dh4g73lgz</string>
+  <key>CFBundleURLTypes</key>
+  <array>
+    <dict>
+      <key>CFBundleURLSchemes</key>
+      <array>
+        <string>aw920m5dh4g73lgz</string>
+      </array>
+    </dict>
+  </array>
 </dict>
 </plist>

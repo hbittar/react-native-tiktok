@@ -4,10 +4,10 @@ import Photos
 
 @objc(Tiktok)
 class Tiktok: UIViewController {
-    
+
   @objc
-  func auth(_ callback: @escaping RCTResponseSenderBlock) {
-    let scopes = ["user.info.basic,video.list"] // list your scopes
+  func auth(_ scope: String, callback: @escaping RCTResponseSenderBlock) {
+    let scopes = [scope] // list your scopes
     let scopesSet = NSOrderedSet(array:scopes)
     let request = TikTokOpenSDKAuthRequest()
     request.permissions = scopesSet
@@ -20,7 +20,7 @@ class Tiktok: UIViewController {
       })
     }
   }
-  
+
   @objc
   func share(_ path: String, callback: @escaping RCTResponseSenderBlock) {
     PHPhotoLibrary.shared().performChanges({

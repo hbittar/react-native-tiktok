@@ -36,8 +36,8 @@ public class TikTokEntryActivity extends ReactActivity implements TikTokApiEvent
         if (baseResp instanceof Authorization.Response) {
             Authorization.Response response = (Authorization.Response) baseResp;
             WritableMap params = Arguments.createMap();
-            params.putInt("status", response.errorCode);
-            params.putString("code", response.authCode);
+            params.putInt("code", response.errorCode);
+            params.putString("status", response.errorMsg);
             ReactContext ctx = getReactNativeHost().getReactInstanceManager().getCurrentReactContext();
             ctx.getJSModule(DeviceEventManagerModule.RCTDeviceEventEmitter.class).emit("onAuthCompleted", params);
             finish();

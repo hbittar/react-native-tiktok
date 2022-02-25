@@ -9,9 +9,9 @@ type ResponseType = {
 };
 
 export const auth = (
-  callback: (code: string, error: boolean | null, errMsg: string) => void
+  scope: string, callback: (code: string, error: boolean | null, errMsg: string) => void
 ) => {
-  Tiktok.auth((resp: ResponseType) => {
+  Tiktok.auth(scope, (resp: ResponseType) => {
     if (Platform.OS === 'ios') {
       switch (resp.status) {
         case response.success:

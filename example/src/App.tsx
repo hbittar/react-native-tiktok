@@ -16,7 +16,7 @@ export default function App() {
     <View style={styles.container}>
       <Button
         onPress={() => {
-          auth((code, error, errMsg) => {
+          auth('info.user.basic',(code, error, errMsg) => {
             console.log(code, error, errMsg);
           });
         }}
@@ -27,7 +27,7 @@ export default function App() {
           Picker.openPicker({
             mediaType: 'video',
           }).then((media) => {
-            init('awhu8hzuq0o3b0n8');
+            init('-');
             share(media.path, (code) => {
               console.log(code);
             });
